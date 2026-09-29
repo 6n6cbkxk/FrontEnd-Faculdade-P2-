@@ -1,0 +1,135 @@
+:root {
+    --bg: #f5f7ff;
+    --panel: #ffffff;
+    --primary: #5b6cff;
+    --secondary: #ff7a59;
+    --accent: #29c7ac;
+    --text: #1f2430;
+    --muted: #5a6475;
+    --border: #dfe4f3;
+    --shadow: 0 12px 28px rgba(31, 36, 48, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 24px;
+}
+
+h1 {
+    margin: 0 0 24px;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.media-card {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    
+}
+
+.media-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(31, 36, 48, 0.16);
+}
+
+.media-card img,
+.media-card video,
+.media-card audio,
+.media-card iframe {
+    display: block;
+    width: 100%;
+}
+
+.media-card img,
+.media-card video,
+.media-card iframe {
+    height: 220px;
+    object-fit: cover;
+    border: none;
+    border-bottom: 2px solid var(--border);
+    background: #edf1ff;
+}
+
+.media-card audio {
+    padding: 12px 10px;
+    background: #f7f9ff;
+}
+
+figcaption {
+    padding: 14px 16px 18px;
+    background: linear-gradient(180deg, #ffffff, #f8f9ff);
+    font-size: 0.96rem;
+    line-height: 1.5;
+    color: var(--muted);
+    border-top: 1px solid rgba(91, 108, 255, 0.15);
+}
+
+figcaption strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 1.02rem;
+}
+
+.image-card figcaption strong {
+    color: var(--primary);
+}
+
+.video-card figcaption strong {
+    color: var(--secondary);
+}
+
+.audio-card figcaption strong {
+    color: var(--accent);
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+}
